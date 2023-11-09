@@ -6,7 +6,7 @@ CFLAGS = -lm
 
 oL= Otime.c
 
-BINDIR = ../BIN/
+BINDIR = ../../BIN/
 PROGS = $(BINDIR)MM1c 
 
 all: MM1c MM1c_MPI MM1f MM1f_MPI

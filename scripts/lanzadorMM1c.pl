@@ -23,7 +23,7 @@ print "\n Repeticiones de la experimentación: $numRep \n\n";
 
 $path0 = `pwd`;
 chomp($path0);
-$T = index($path0,"T")-1;
+$T = index($path0,"/scripts");
 $Path = substr($path0,0,$T);
 print "$Path \n";
 
