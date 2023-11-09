@@ -1,8 +1,8 @@
 /************************************************************************
-* Autor: J. Corredor
+* Autor: Alejandro Castro Martinez
 * Fecha: Octubre 2023
 * Computación de Alto Rendimiento
-* Maestría en Inteligencia Artificial
+* Maestría en Ingeniería de Sistemas y Computación
 * Tema: Programa de Multiplicación de Matrices usando MPI
 * - Algoritmo Clásico filasXcolumnas
 *************************************************************************/
