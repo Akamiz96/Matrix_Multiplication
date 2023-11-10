@@ -1,30 +1,35 @@
 ![Matrix Multiplication Image](/images/matrix_multiplication.jpg)
 
-# Multiplicación de Matrices con OpenMP y MPI
+# Multiplicación de Matrices con OpenMP
 
-Este repositorio contiene un proyecto para realizar experimentos de multiplicación de matrices utilizando el algoritmo tradicional de filas por columnas con implementaciones en paralelo utilizando OpenMP y MPI. 
+Este repositorio contiene un proyecto para realizar experimentos de multiplicación de matrices utilizando el algoritmo tradicional de filas por columnas con implementaciones en paralelo utilizando OpenMP. 
 
 El objetivo es medir y comparar el tiempo de ejecución para matrices cuadradas de diferentes tamaños.
 
 ## Estructura del Proyecto
 
-- `src/`: Contiene el código fuente de las implementaciones en C/C++.
-- `scripts/`: Scripts de compilación y ejecución de los experimentos.
+- `src/`: Contiene el código fuente de las implementaciones en C.
+- `scripts/`: Scripts de ejecución de los experimentos.
 - `results/`: Almacena los resultados de los experimentos.
-- `docs/`: Documentación adicional, si es necesario.
+- `docs/`: Documentación adicional.
 
 ## Requisitos
 
+- [build-essentials]() instalado en su sistema.
 - [OpenMP](https://www.openmp.org/) instalado en su sistema.
-- [MPI (Message Passing Interface)](https://www.open-mpi.org/) instalado en su sistema.
 
 ## Compilación
 
 Puede compilar los programas de la siguiente manera:
 
 ```bash
-cd scripts/
+cd src/
+make
 ```
+
+La ejecución de los comandos mencionados resulta en la generación de ejecutables correspondientes a diversos programas desarrollados en C. 
+
+Dichos archivos ejecutables serán almacenados en el directorio `BIN/`, situado en la raíz del proyecto.
 
 ## Ejecución 
 
