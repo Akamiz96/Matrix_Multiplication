@@ -1,4 +1,6 @@
-r las listas de valores para los parámetros
+#!/bin/bash
+
+# Definir las listas de valores para los parámetros
 VectorSize=("100" "200" "400" "600" "800" "1000" "1500" "2000" "3000" "4000" "5000" "6000" "7000" "8000")
 cores=("1" "2" "4" "8" "10" "14" "16" "20")
 

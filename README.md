@@ -95,6 +95,69 @@ En caso de requerir la creación de la carpeta [./Matrix_Multiplication/Solucion
 mkdir Soluciones
 ```
 
+## Generación de archivos para el clúster Condor
+
+En la fase de preparación para la ejecución de trabajos en el entorno del Clúster Condor, se llevó a cabo la generación de archivos "submit" destinados a cada ejecución requerida. 
+
+Estos archivos encapsulan directivas y parámetros esenciales que permiten al Clúster Condor orquestar la ejecución distribuida de programas específicos de manera eficiente. Un ejemplo paradigmático de la estructura de uno de estos archivos puede observarse a continuación
+
+![Example of a Condor Submit file](/images/example_Condor_File.png)
+
+Este archivo de envío para HTCondor se estructura en diversas secciones que desempeñan roles específicos en la configuración y ejecución del trabajo distribuido. A continuación, se detallan y explican cada una de estas secciones para una comprensión integral:
+
+- **executable** = *../../BIN/MM1c*:
+  - Este parámetro define la ruta del ejecutable que se utilizará durante la ejecución. En este caso, se especifica que el programa ejecutable "MM1c" se encuentra en la ruta relativa "../../BIN/".
+- **universe** = *vanilla*:
+  - El parámetro "universe" establece el entorno de ejecución. En este caso, se utiliza el valor "vanilla", que es el entorno estándar de HTCondor.
+- **output**, **error**, **log**:
+  - Estos parámetros definen la ubicación y el formato de los archivos de salida, error y registro (log). Las expresiones "$(Process)" son variables que toman el valor del número del proceso en la ejecución.
+- **should_transfer_files** = *YES*:
+  - Este parámetro indica que los archivos necesarios para la ejecución deben transferirse al sistema de archivos de ejecución del trabajador.
+- **when_to_transfer_output** = *ON_EXIT*:
+  - Determina cuándo se deben transferir los archivos de salida de vuelta al sistema de archivos del solicitante. En este caso, la transferencia se realiza al finalizar la ejecución del trabajo.
+- **notification** = *never*:
+  - Configura las notificaciones sobre el estado de la ejecución. En este caso, se establece en "never", indicando que no se recibirán notificaciones.
+- **arguments** = *1000 16 0*:
+  - Especifica los argumentos que se pasarán al programa ejecutable. En este ejemplo, se proporcionan los valores "1000", "16" y "0".
+- **queue 30**:
+  - La instrucción "queue" se utiliza para encolar trabajos para ejecución. En este caso, se encolan 30 trabajos con la misma configuración definida anteriormente.
+
+Este archivo submit para HTCondor configura de manera precisa los parámetros esenciales para la ejecución distribuida del programa "*MM1c*", permitiendo la ejecución de múltiples instancias con variaciones en los argumentos especificados.
+
+Dado que los argumentos experimentales varían en cada ejecución, como se evidenció en el script desarrollado en el lenguaje Perl, se procede a la generación de un archivo por cada combinación posible de argumentos, según la combinatoria previamente delineada. 
+
+Con el objetivo de optimizar esta tarea de manera automatizada, se han desarrollado dos scripts de consola *bash shell*. Estos scripts se encargan de generar los archivos "*submit*" correspondientes a cada configuración de ejecución requerida y los someten a la ejecución en el entorno del Clúster Condor.
+
+Este enfoque automatizado no solo agiliza el proceso de preparación y envío de trabajos al Clúster Condor, sino que también garantiza la exhaustividad en la cobertura de las diversas configuraciones experimentales, facilitando así la obtención de resultados representativos y comparables en el contexto de la evaluación de rendimiento.
+
+En el contexto de la automatización del proceso, el script designado como "createFiles.sh" se ubica en el directorio "*./Matrix_Multiplication/scripts/condor_X*", donde la variable "X" adopta el valor de "c" para denotar archivos vinculados a la multiplicación tradicional de matrices y "f" para aquellos relacionados con el algoritmo de filas por filas.
+
+- [./Matrix_Multiplication/scripts/condor_c/](./scripts/condor_c/)
+- [./Matrix_Multiplication/scripts/condor_f/](./scripts/condor_f/)
+
+La generación de archivos "*submit*" específicos para la multiplicación tradicional de matrices es ilustrada en la imagen adjunta. En el caso del algoritmo de filas por filas, la única variación reside en el ejecutable que se debe invocar. 
+
+Este enfoque modular y diferenciado según el algoritmo permite una adaptabilidad eficiente a las distintas configuraciones experimentales, otorgando flexibilidad y precisión en la preparación de los trabajos destinados al Clúster Condor.
+
+Los archivos correspondientes son: 
+
+- [createFiles.sh para el algoritmo tradicional de multiplicación de matrices](./scripts/condor_c/createFiles.sh)
+- [createFiles.sh para el algoritmo de filas por filas de multiplicación de matrices](./scripts/condor_f/createFiles.sh)
+
+Estos archivos pueden ejecutarse desde la carpeta raíz con el par de comandos presentados a continuación 
+
+```bash
+./scripts/condor_c/createFiles.sh
+./scripts/condor_f/createFiles.sh
+```
+
+Si no se han dado permisos de ejecución a estos archivos, se deben ejecutar los siguientes comandos para poder luego ejecutar los dos comandos anteriores: 
+
+```bash
+chmod +x scripts/condor_c/createFiles.sh
+chmod +x scripts/condor_f/createFiles.sh
+```
+
 ## Resultados
 
 Los resultados de los experimentos se almacenan en la carpeta results/. Puede utilizar herramientas de análisis de datos como Python y matplotlib para visualizar los resultados.

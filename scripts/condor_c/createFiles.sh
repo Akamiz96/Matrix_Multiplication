@@ -1,5 +1,8 @@
-r las listas de valores para los parámetros
-VectorSize=("100" "200" "400" "600" "800" "1000" "1500" "2000" "3000" "4000" "5000" "6000" "7000" "8000")
+#!/bin/bash
+
+# Definir las listas de valores para los parámetros
+VectorSize=("100" "200" "400" "600" "800" "1000" "1500" "2000" "3000" "4000" 
+            "5000" "6000" "7000" "8000")
 cores=("1" "2" "4" "8" "10" "14" "16" "20")
 
 # Directorio donde se generarán los archivos de sumisión
@@ -8,7 +11,8 @@ output_dir="submit_files"
 # Crear el directorio si no existe
 mkdir -p "$output_dir"
 
-# Crear directorios de error, output y log para almacenar los respectivos archivos
+# Crear directorios de error, output y log para almacenar 
+# los respectivos archivos
 mkdir -p "error"
 mkdir -p "output"
 mkdir -p "log"
