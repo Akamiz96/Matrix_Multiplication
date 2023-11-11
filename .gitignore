@@ -54,8 +54,17 @@ dkms.conf
 # Submit Files HTCondor
 *.sub
 
+# Carpetas de error, output y log de las ejecuciones de HTCondor
+error/
+output/
+log/
+
+# Carpeta submit_files
+submit_files/
+
 # Executables 
 MM1c
 MM1f
 MM1c_MPI
 MM1f_MPI
+

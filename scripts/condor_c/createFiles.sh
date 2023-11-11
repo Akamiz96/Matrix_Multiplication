@@ -8,6 +8,11 @@ output_dir="submit_files"
 # Crear el directorio si no existe
 mkdir -p "$output_dir"
 
+# Crear directorios de error, output y log para almacenar los respectivos archivos
+mkdir -p "error"
+mkdir -p "output"
+mkdir -p "log"
+
 # Número de ejecuciones por combinación
 num_executions=30
 
@@ -19,7 +24,7 @@ for vs in "${VectorSize[@]}"; do
 
         # Crear el archivo de sumisión
         cat <<EOF > "$submit_file"
-executable = ../../../BIN/MM1c
+executable = ../../BIN/MM1c
 universe = vanilla
 output = output/salida_${vs}_${c}_\$(Process).txt
 error = error/error_${vs}_${c}_\$(Process).txt
