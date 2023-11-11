@@ -50,3 +50,12 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Submit Files HTCondor
+*.sub
+
+# Executables 
+MM1c
+MM1f
+MM1c_MPI
+MM1f_MPI
