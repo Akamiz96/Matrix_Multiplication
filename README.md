@@ -187,7 +187,7 @@ Si desea contribuir a este proyecto, no dude en abrir problemas, enviar solicitu
 
 ## Licencia
 
-Este proyecto se distribuye bajo la licencia MIT. Consulte el archivo LICENSE para obtener más detalles.
+Este proyecto se distribuye bajo la licencia MIT. Consulte el archivo [LICENSE](LICENSE) para obtener más detalles.
 
 ## Autor 
 
