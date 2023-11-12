@@ -158,6 +158,25 @@ chmod +x scripts/condor_c/createFiles.sh
 chmod +x scripts/condor_f/createFiles.sh
 ```
 
+## Ejecución de los jobs en el clúster Condor
+
+En el contexto de la ejecución de trabajos en el Clúster Condor, la acción de enviar un archivo "*submit*" para su procesamiento se realiza mediante el comando 
+
+```bash
+condor_submit <archivo submit>
+```
+
+No obstante, considerando la generación de 115 archivos de este tipo por cada programa a ejecutar según las combinaciones mencionadas previamente, llevar a cabo la ejecución de manera individual sería un proceso laborioso y proclive a errores.
+
+En respuesta a esta consideración, se ha desarrollado un script adicional en el lenguaje Bash Shell. Este script, diseñado con la finalidad de optimizar el proceso, ejecuta de manera automatizada todos los archivos contenidos en la carpeta "*submit_files*". 
+
+Este enfoque no solo simplifica el procedimiento operativo, sino que también agiliza la ejecución de trabajos en el entorno del Clúster Condor, contribuyendo así a una gestión más eficiente y efectiva de los recursos computacionales disponibles.
+
+El archivo del script puede ser encontrado en las siguientes ubicaciones
+
+- [executeSubmitFiles.sh para el algoritmo tradicional de multiplicación de matrices](./scripts/condor_c/executeSubmitFiles.sh)
+- [executeSubmitFiles.sh para el algoritmo de filas por filas de multiplicación de matrices](./scripts/condor_f/executeSubmitFiles.sh)
+
 ## Resultados
 
 Los resultados de los experimentos se almacenan en la carpeta results/. Puede utilizar herramientas de análisis de datos como Python y matplotlib para visualizar los resultados.
