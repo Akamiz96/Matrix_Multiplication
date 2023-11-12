@@ -195,6 +195,30 @@ Esta operación se automatiza mediante el programa Python mencionado, produciend
 
 El script de Python es: [getMaxTimes.py](scripts/getMaxTimes.py) y los archivos consolidados se encuentran dentro de la carpeta [./Matrix_Multiplication/consolidated/](consolidated/)
 
+En la etapa subsiguiente, utilizando los resultados consolidados, se efectúa el cálculo de valores promedio en conjunción con la medida de desviación estándar para cada ejecución. 
+
+Al igual que en la fase anterior, esta operación se ha automatizado mediante un script desarrollado en Python. Dicho script aglutina los archivos pertinentes asociados a un ambiente de pruebas específico y los compila en archivos de formato CSV para facilitar su análisis posterior.
+
+A continuación, se exhibe un fragmento de uno de estos archivos, presentado en formato de tabla para una interpretación más accesible.
+
+#### Resultados de la ejecución del algoritmo de multiplicación de matrices tradicional en el ambiente Ubuntu
+
+| **Tamaño** | **Procesadores** | **Tiempo Promedio** | **Desviación estándar** |
+|:----------:|:----------------:|:-------------------:|:-----------------------:|
+| 100        | 1                | 677.03              | 29.51                   |
+| 100        | 10               | 115.77              | 3.82                    |
+| 100        | 14               | 103.17              | 9.82                    |
+| 100        | 16               | 100.03              | 3.38                    |
+| 100        | 2                | 356.8               | 34.37                   |
+| 100        | 20               | 88.1                | 8.98                    |
+| 100        | 4                | 192.2               | 26.98                   |
+
+Como se detalla en la tabla, la presentación de resultados se estructura de acuerdo con el tamaño de las matrices a multiplicar, seguido por la cantidad de procesadores utilizados. A continuación, se destacan el tiempo promedio de ejecución y, finalmente, la desviación estándar vinculada a esta métrica.
+
+Dado que el análisis y la comparación efectiva de datos numéricos suelen beneficiarse considerablemente mediante representaciones gráficas, la próxima sección exhibirá diversas gráficas de interés derivadas de los archivos de resultados generados. 
+
+Este enfoque visual proporcionará una perspectiva más intuitiva y comprensible de las tendencias, patrones y variaciones presentes en los resultados, enriqueciendo así la interpretación de los hallazgos experimentales.. 
+
 
 ## Contribuciones
 
