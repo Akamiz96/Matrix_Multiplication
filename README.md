@@ -179,7 +179,22 @@ El archivo del script puede ser encontrado en las siguientes ubicaciones
 
 ## Resultados
 
-Los resultados de los experimentos se almacenan en la carpeta results/. Puede utilizar herramientas de análisis de datos como Python y matplotlib para visualizar los resultados.
+Tras haber completado la ejecución de los diversos programas en cada uno de los tres entornos previamente delineados, se han obtenido los resultados que se exponen a continuación. Es esencial destacar que los resultados se centran en el tiempo de ejecución, medido en microsegundos, de cada uno de los algoritmos en los respectivos ambientes de pruebas.
+
+Los resultados en su forma original están alojados en el directorio [./Matrix_Multiplication/results/](/results/). Este directorio se segmenta en seis subdirectorios, los cuales contienen los resultados generados por la ejecución de cada uno de los algoritmos en los distintos entornos de pruebas. 
+
+Estos archivos de resultados son de naturaleza textual, y su estructura sigue el formato de salida detallado en la sección referente a la [ejecución de los archivos ejecutables individuales](#ejecuci%C3%B3n-individual-de-cada-archivo-ejecutable).
+
+Cada iteración de prueba realizada con cada algoritmo y conjunto de parámetros experimentales se ejecutó de manera repetida en 30 ocasiones. En consecuencia, cada archivo de resultados almacenado refleja los tiempos de ejecución derivados de estos 30 experimentos. 
+
+Para gestionar este conjunto extenso de datos, se implementó un proceso de postprocesamiento mediante un programa desarrollado en Python. Este programa recorre sistemáticamente cada archivo en el directorio de resultados y genera archivos nuevos que contienen valores consolidados.
+
+La consolidación de valores se efectúa seleccionando el tiempo máximo registrado en cada ejecución, ya que este representa el tiempo de ejecución total del algoritmo en el respectivo experimento. 
+
+Esta operación se automatiza mediante el programa Python mencionado, produciendo archivos con 30 valores, cada uno correspondiente al tiempo en microsegundos empleado en el experimento “N”. Este enfoque de postprocesamiento proporciona una visión más clara y representativa de los resultados, permitiendo un análisis más preciso y significativo.
+
+El script de Python es: [getMaxTimes.py](scripts/getMaxTimes.py) y los archivos consolidados se encuentran dentro de la carpeta [./Matrix_Multiplication/consolidated/](consolidated/)
+
 
 ## Contribuciones
 
