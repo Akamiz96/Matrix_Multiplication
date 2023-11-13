@@ -52,7 +52,7 @@ for carpeta in carpetas:
         resultados_totales.append({
             'Tamano': x,
             'Procesadores': y,
-            'Valor Promedio': valor_promedio,
+            'Tiempo Promedio': valor_promedio,
             'Desviación Estándar': desviacion_estandar
         })
 
@@ -74,14 +74,14 @@ for carpeta in carpetas:
 
         # Calcular el speedup para cada fila del DataFrame
         for index, row in df_tamano.iterrows():
-            speedup = serie_row['Valor Promedio'].values[0] / row['Valor Promedio']
+            speedup = serie_row['Tiempo Promedio'].values[0] / row['Tiempo Promedio']
             df_resultados.at[index, 'Speedup'] = round(speedup,2)
 
     # Ordenar el DataFrame por tamaño y procesadores
     df_resultados = df_resultados.sort_values(by=['Tamano', 'Procesadores'])
 
     # Agregar la columna 'Speedup' al DataFrame original y guardar en el archivo CSV
-    df_resultados.to_csv(ruta_salida, sep=';', index=False, columns=['Tamano', 'Procesadores', 'Valor Promedio', 'Desviación Estándar', 'Speedup'])
+    df_resultados.to_csv(ruta_salida, sep=';', index=False, columns=['Tamano', 'Procesadores', 'Tiempo Promedio', 'Desviación Estándar', 'Speedup'])
 
     print(f"Los resultados se han guardado en {ruta_salida}")
     print(df_resultados)

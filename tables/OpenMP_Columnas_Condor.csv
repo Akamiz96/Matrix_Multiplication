@@ -1,4 +1,4 @@
-Tamano;Procesadores;Valor Promedio;Desviación Estándar;Speedup
+Tamano;Procesadores;Tiempo Promedio;Desviación Estándar;Speedup
 100;1;5371.67;6102.51;1.0
 100;2;2946.0;3581.65;1.82
 100;4;2304.53;3364.53;2.33
