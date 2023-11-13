@@ -86,7 +86,7 @@ archivos_csv = ['OpenMP_Columnas_Condor.csv', 'OpenMP_Columnas_Ubuntu.csv', 'Ope
 tam = 1000
 
 # Cantidad de procesadores que se desea filtrar
-proc = 1
+proc = 16
 
 # Generar y guardar la gráfica del tiempo promedio
 nombre_imagen = f'grafica_tiempo_promedio_{tam}_{proc}.png'
