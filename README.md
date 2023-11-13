@@ -220,6 +220,10 @@ Dado que el análisis y la comparación efectiva de datos numéricos suelen bene
 Este enfoque visual proporcionará una perspectiva más intuitiva y comprensible de las tendencias, patrones y variaciones presentes en los resultados, enriqueciendo así la interpretación de los hallazgos experimentales.. 
 
 
+## Documentación
+
+Una documentación más exhaustiva se encuentra disponible en el PDF [Multiplicacion de Matrices - Alejandro Castro Martinez.pdf](docs/Multiplicacion%20de%20Matrices%20-%20Alejandro%20Castro%20Martinez.pdf)
+
 ## Contribuciones
 
 Si desea contribuir a este proyecto, no dude en abrir problemas, enviar solicitudes de extracción o sugerir mejoras.
