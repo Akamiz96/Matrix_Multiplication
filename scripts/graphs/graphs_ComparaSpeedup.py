@@ -68,8 +68,8 @@ carpeta_tablas = '../../tables/'
 carpeta_destino = 'imagenes_comparacion_speedup_lineas/'
 
 # Lista de archivos CSV
-#archivos_csv = ['OpenMP_Columnas_Ubuntu.csv', 'OpenMP_Columnas_Windows.csv', 'OpenMP_Filas_Ubuntu.csv', 'OpenMP_Filas_Windows.csv']
-archivos_csv = ['OpenMP_Columnas_Condor.csv', 'OpenMP_Filas_Condor.csv']
+archivos_csv = ['OpenMP_Columnas_Ubuntu.csv', 'OpenMP_Columnas_Windows.csv', 'OpenMP_Filas_Ubuntu.csv', 'OpenMP_Filas_Windows.csv']
+# archivos_csv = ['OpenMP_Columnas_Condor.csv', 'OpenMP_Filas_Condor.csv']
 # Tamano que se desea filtrar
 tam = 4000
 
